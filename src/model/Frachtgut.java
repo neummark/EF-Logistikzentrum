@@ -8,6 +8,10 @@ public class Frachtgut {
         this.bezeichnung = bez;
     }
 
+
+    public boolean istGefahrgut(){
+        return false;
+    }
     /**
      * Es wird die Bezeichnung zurückgegeben.
      * @return Bezeichnung des Frachtgut
