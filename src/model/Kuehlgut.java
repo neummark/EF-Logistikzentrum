@@ -1,8 +1,13 @@
 package model;
 
+private
+
 public class Kuehlgut extends Frachtgut{
 
-    public Kuehlgut(String bez){
-        super(bez);
+    public Kuehlgut(String bez, double akT, double minT, double maxT){
+        //super.bez;
+
+
     }
+
 }
