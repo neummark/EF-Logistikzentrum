@@ -11,7 +11,6 @@ public class Gefahrgut extends Frachtgut{
     }
 
     public String gibInfo(){
-        return this.bezeichnung;
+        return this.bezeichnung + istGefahrgut();
     }
-
 }

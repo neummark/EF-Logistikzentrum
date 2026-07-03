@@ -47,6 +47,6 @@ public class Kuehlgut extends Frachtgut{
 
     @Override
     public String gibInfo() {
-        return super.gibInfo();
+        return super.gibInfo() + istKuehlgut();
     }
 }

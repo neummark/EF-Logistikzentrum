@@ -83,7 +83,7 @@ public class Logistikzentrum {
     public void verarbeiteWarteschlange(){
         int alleGuetter = anzahlFrachtgueter;
         int alleFahrzeuge = anzahlFahrzeuge;
-        for(int i = alleGuetter; i >= 0; i--){
+        for(int i = alleGuetter-1; i >= 0; i--){
             for(int index = alleFahrzeuge-1; index >= 0; index--){
                 if(pruefeObKombiPasst(gibFrachtgut(i),gibFahrzeug(index))){
                     verfrachte(gibFrachtgut(i),gibFahrzeug(index));
