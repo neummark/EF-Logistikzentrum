@@ -81,7 +81,15 @@ public class Logistikzentrum {
      * so wird das Frachtgut-Objekt auf das Fahrzeug-Objekt verfrachtet (entsprechende Methode wird aufgerufen).
      */
     public void verarbeiteWarteschlange(){
-
+        int alleGuetter = anzahlFrachtgueter;
+        int alleFahrzeuge = anzahlFahrzeuge;
+        for(int i = alleGuetter; i >= 0; i--){
+            for(int index = alleFahrzeuge-1; index >= 0; index--){
+                if(pruefeObKombiPasst(gibFrachtgut(i),gibFahrzeug(index))){
+                    verfrachte(gibFrachtgut(i),gibFahrzeug(index));
+                }
+            }
+        }
     }
 
     /**
@@ -93,8 +101,22 @@ public class Logistikzentrum {
      * @param fahrzeug
      * @return Gibt an, ob das Frachgut auf das Fahrzeug passt
      */
-    public boolean pruefeObKombiPasst(Frachtgut gut, Fahrzeug fahrzeug){
-        return false;
+    private boolean pruefeObKombiPasst(Frachtgut gut, Fahrzeug fahrzeug){
+        if(gut == null || fahrzeug == null){
+            return false;
+        }
+
+        if(fahrzeug.gibFrachtgut() == null){
+            if(gut.istGefahrgut() && fahrzeug.istSicher()){
+                return true;
+            } else if(gut.istKuehlgut() && fahrzeug.kannKeuhlen()){
+                return true;
+            } else {
+                return true;
+            }
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -109,7 +131,7 @@ public class Logistikzentrum {
      */
     public void verfrachte(Frachtgut gut, Fahrzeug fahrzeug){
         if(gut != null && fahrzeug != null){
-            //TODO: hier fehlen zwei Befehle --> ergänzen!
+            fahrzeug.setzeFrachtgut(gut);
 
             entferneGut(gut); //dieser Befehl muss hier stehen
         }
