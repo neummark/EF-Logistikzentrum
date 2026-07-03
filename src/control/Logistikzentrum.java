@@ -14,8 +14,8 @@ public class Logistikzentrum {
 
     public Logistikzentrum(String bezeichnung) {
         this.bezeichnung = bezeichnung;
-        this.anzahlFrachtgueter = (int)(Math.random()*10 + 5);
-        this.anzahlFahrzeuge = (int)(Math.random()*10 + 1);
+        anzahlFrachtgueter = (int)(Math.random()*10 + 5);
+        anzahlFahrzeuge = (int)(Math.random()*10 + 1);
         erstelleTestDaten();
     }
 

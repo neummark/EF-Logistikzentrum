@@ -12,10 +12,17 @@ public class Frachtgut {
     public boolean istGefahrgut(){
         return false;
     }
+
+    public boolean istKuehlgut(){
+        return false;
+    }
+
     /**
      * Es wird die Bezeichnung zurückgegeben.
      * @return Bezeichnung des Frachtgut
      */
+
+
     public String gibInfo(){
         return this.bezeichnung;
     }
