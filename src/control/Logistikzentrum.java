@@ -13,6 +13,7 @@ public class Logistikzentrum {
     private Fahrzeug[] alleFahrzeuge;
 
     public Logistikzentrum(String bezeichnung) {
+        System.out.println("Logistikzentrum constructor");
         this.bezeichnung = bezeichnung;
         anzahlFrachtgueter = (int)(Math.random()*10 + 5);
         anzahlFahrzeuge = (int)(Math.random()*10 + 1);
@@ -82,9 +83,12 @@ public class Logistikzentrum {
      */
     public void verarbeiteWarteschlange(){
         int alleGuetter = anzahlFrachtgueter;
+        System.out.println("Anzahl von Frachtgüttern: " + alleGuetter);
         int alleFahrzeuge = anzahlFahrzeuge;
+        System.out.println("Anzahl von Fahrzeugen: " + alleFahrzeuge);
         for(int i = alleGuetter-1; i >= 0; i--){
             for(int index = alleFahrzeuge-1; index >= 0; index--){
+                System.out.println("Es wird verglichen: " + gibFrachtgut(i) + " mit " + gibFahrzeug(index));
                 if(pruefeObKombiPasst(gibFrachtgut(i),gibFahrzeug(index))){
                     verfrachte(gibFrachtgut(i),gibFahrzeug(index));
                 }
