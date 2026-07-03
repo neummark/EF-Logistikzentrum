@@ -5,11 +5,30 @@ public class Fahrzeug {
     private String bezeichnung;
     private boolean kuehl;
     private boolean sicher;
+    private Frachtgut frachtgut;
 
     public Fahrzeug(String bez, boolean kuehl, boolean sicher){
         this.bezeichnung = bez;
         this.kuehl = kuehl;
         this.sicher = sicher;
+    }
+
+    public boolean kannKeuhlen(){
+        return kuehl;
+    }
+
+    public boolean istSicher(){
+        return sicher;
+    }
+
+    public Frachtgut gibFrachtgut(){
+        return frachtgut;
+    }
+
+    public void setzeFrachtgut(Frachtgut gut){
+        if(gut != null){
+            this.frachtgut=gut;
+        }
     }
 
     /**
